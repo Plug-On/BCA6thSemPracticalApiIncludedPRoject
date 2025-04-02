@@ -15,9 +15,9 @@
     </tr>
     @foreach($categories as $category)
     <tr class="text-center">
-        <td class="border p-2">{{$category->priority}}</td>
-        <td class="border p-2">{{$category->name}}</td>
-        <td class="border p-2">
+        <td class="border p-2 dark:text-white">{{$category->priority}}</td>
+        <td class="border p-2 dark:text-white">{{$category->name}}</td>
+        <td class="border p-2 dark:text-white">
             <a href="{{route('category.edit',$category->id)}}" class="bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
             <a class="bg-red-600 text-white px-3 py-1 rounded cursor-pointer" onclick="showPopup('{{$category->id}}')">Delete</a>
         </td>

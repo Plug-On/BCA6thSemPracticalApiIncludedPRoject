@@ -20,7 +20,7 @@
     </tr>
     @foreach ($orders as $order)
         <tr class="text-center">
-            <td class="border p-2">{{$order->created_at}}</td>
+            <td class="border p-2 ">{{$order->created_at}}</td>
             <td class="border p-2">
                 <img src="{{asset('images/products/'.$order->product->photopath)}}" alt="" class="h-24 mx-auto">
             </td>

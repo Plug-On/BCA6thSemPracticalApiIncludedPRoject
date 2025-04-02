@@ -16,8 +16,8 @@
 <body>
     @include('layouts.alert')
     <div class="flex justify-between items-center px-16 py-2 bg-blue-900 text-white">
-        <p>F|T|I|Y</p>
-        <p>Call Us: 9876543210</p>
+        <p class="font-semibold" >~AllStore~</p>
+        <p class="font-semibold">Call Us: 9876543210</p>
     </div>
     <nav class="shadow bg-white px-16 py-4 flex justify-between items-center mb-10 sticky top-0 z-40">
         <img src="{{asset('images/logo.png')}}" alt="" class="h-16">

@@ -22,18 +22,18 @@
     </tr>
     @foreach($products as $product)
     <tr>
-        <td class="border p-2">{{$loop->iteration}}</td>
+        <td class="border p-2 dark:text-white">{{$loop->iteration}}</td>
         <td class="border p-2">
             <img src="{{asset('images/products/'.$product->photopath)}}" alt="" class="w-16 h-16">
         </td>
-        <td class="border p-2">{{$product->name}}</td>
-        <td class="border p-2">{{$product->description}}</td>
-        <td class="border p-2">{{$product->price}}</td>
-        <td class="border p-2">{{$product->discounted_price}}</td>
-        <td class="border p-2">{{$product->stock}}</td>
-        <td class="border p-2">{{$product->status}}</td>
-        <td class="border p-2">{{$product->category->name}}</td>
-        <td class="border p-2">
+        <td class="border p-2 dark:text-white">{{$product->name}}</td>
+        <td class="border p-2 dark:text-white">{{$product->description}}</td>
+        <td class="border p-2 dark:text-white">{{$product->price}}</td>
+        <td class="border p-2 dark:text-white">{{$product->discounted_price}}</td>
+        <td class="border p-2 dark:text-white">{{$product->stock}}</td>
+        <td class="border p-2 dark:text-white">{{$product->status}}</td>
+        <td class="border p-2 dark:text-white">{{$product->category->name}}</td>
+        <td class="border p-2 dark:text-white">
             <a href="{{route('product.edit',$product->id)}}" class="bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
             <a href="{{route('product.destroy',$product->id)}}" class="bg-red-600 text-white px-3 py-1 rounded" onclick="return confirm('Are you sure to Delete?')">Delete</a>
         </td>
