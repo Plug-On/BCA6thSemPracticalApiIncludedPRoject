@@ -14,6 +14,8 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 //category
 Route::get('/categories',[CategoryController::class,'index']);
+Route::get('/categoryproducts/{id}',[CategoryController::class,'categoryproducts']);
+
 ROute::middleware('auth:sanctum')->group(function(){
     Route::post('/category/store', [CategoryController::class,'store']);
     Route::put('/category/update/{id}',[CategoryController::class,'update']);
