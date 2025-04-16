@@ -45,9 +45,9 @@ class CartController extends Controller
     }
 
     public function destroy($id){
-        $cart = Cart:: where ('user_id', Auth::id())->where('id',$id)->first();
+        $cart = Cart::where('user_id', Auth::id())->where('id',$id)->first();
 
-        if($cart){
+        if(!$cart){
             return response()-> json([
                 'status'=>404,
                 'message'=> 'Cart not found',
