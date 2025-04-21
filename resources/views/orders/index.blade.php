@@ -20,19 +20,19 @@
     </tr>
     @foreach ($orders as $order)
         <tr class="text-center">
-            <td class="border p-2 ">{{$order->created_at}}</td>
+            <td class="border p-2 dark:text-white">{{$order->created_at}}</td>
             <td class="border p-2">
                 <img src="{{asset('images/products/'.$order->product->photopath)}}" alt="" class="h-24 mx-auto">
             </td>
-            <td class="border p-2">{{$order->product->name}}</td>
-            <td class="border p-2">{{$order->name}}</td>
-            <td class="border p-2">{{$order->phone}}</td>
-            <td class="border p-2">{{$order->address}}</td>
-            <td class="border p-2">{{$order->price}}</td>
-            <td class="border p-2">{{$order->qty}}</td>
-            <td class="border p-2">{{$order->qty * $order->price}}</td>
-            <td class="border p-2">{{$order->payment_method}}</td>
-            <td class="border p-2">{{$order->status}}</td>
+            <td class="border p-2 dark:text-white">{{$order->product->name}}</td>
+            <td class="border p-2 dark:text-white">{{$order->name}}</td>
+            <td class="border p-2 dark:text-white">{{$order->phone}}</td>
+            <td class="border p-2 dark:text-white">{{$order->address}}</td>
+            <td class="border p-2 dark:text-white">{{$order->price}}</td>
+            <td class="border p-2 dark:text-white">{{$order->qty}}</td>
+            <td class="border p-2 dark:text-white">{{$order->qty * $order->price}}</td>
+            <td class="border p-2 dark:text-white">{{$order->payment_method}}</td>
+            <td class="border p-2 dark:text-white">{{$order->status}}</td>
             <td class="border p-2 grid gap-2">
                 <a href="{{route('order.status',[$order->id,'Pending'])}}" class="bg-blue-600 text-white px-2 py-1 rounded-lg">Pending</a>
                 <a href="{{route('order.status',[$order->id,'Processing'])}}" class="bg-green-600 text-white px-2 py-1 rounded-lg">Processing</a>

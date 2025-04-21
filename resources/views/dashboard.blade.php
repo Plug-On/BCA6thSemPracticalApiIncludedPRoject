@@ -18,20 +18,24 @@
         </div>
         <div class="bg-yellow-100 p-5 shadow rounded-lg">
             <h2 class="text-2xl font-bold text-blue-900">Pending Orders</h2>
-            <p>Pending Orders: 20</p>
+            <p>Pending orders: {{ $pending }}</p>
         </div>
         <div class="bg-purple-100 p-5 shadow rounded-lg">
             <h2 class="text-2xl font-bold text-blue-900">Processing Orders</h2>
-            <p>Processing Orders: 30</p>
+            <p>Processing orders: {{ $processing }}</p>
         </div>
         <div class="bg-pink-100 p-5 shadow rounded-lg">
             <h2 class="text-2xl font-bold text-blue-900">Completed Orders</h2>
-            <p>Completed Orders: 40</p>
+            <p>Completed orders: {{ $delivered }}</p>
         </div>
 
         <div>
             <canvas id="myChart" ></canvas>
         </div>
+
+        <div>
+            <canvas id="myChart2"></canvas>
+          </div>
 
     </div>
 
@@ -41,7 +45,7 @@
         const data = {
             labels: ["Pending","Processing","Shipping","Delivered"],
             datasets: [{
-                label: "Value",
+                label: "No. of Orders",
                 data: [{{$pending}}, {{$processing}}, {{$shipping}}, {{$delivered}}],
                 backgroundColor: [
                     "rgb(90, 50, 241)",
@@ -61,4 +65,22 @@
 
         var chartBar = new Chart(document.getElementById("myChart"), configPie2);
     </script>
+
+<script>
+    const ctx = document.getElementById('myChart2');
+
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: {!! $allcat !!},
+        datasets: [{
+          label: '# of Products',
+          data: {!! $productcount !!},
+          borderWidth: 1
+        }]
+      },
+      options: {
+      }
+    });
+  </script>
 @endsection
